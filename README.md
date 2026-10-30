@@ -23,3 +23,10 @@ devops-practice/
 - **OS**: Windows 11
 - **가상화**: WSL2 + Docker Desktop
 - **버전 관리**: Git + GitHub
+
+## 볼륨 영속성 검증 완료
+
+- 볼륨 생성: `docker volume create my-volume`
+- 컨테이너 연결: `-v my-volume:/usr/share/nginx/html`
+- 파일 복사: `docker cp app/index.html my-nginx-volume:/usr/share/nginx/html/`
+- 영속성 확인: 컨테이너 삭제 후 재생성해도 데이터 유지 ✅
