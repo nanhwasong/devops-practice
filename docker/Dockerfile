@@ -1,7 +1,7 @@
-# nginx 공식 이미지 사용
+﻿# nginx 공식 이미지 사용
 FROM nginx:alpine
 
-# 작업 디렉토리 설정
+# 워킹 디렉터리 설정
 WORKDIR /usr/share/nginx/html
 
 # index.html 복사
