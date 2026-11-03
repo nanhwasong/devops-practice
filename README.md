@@ -12,13 +12,17 @@ Windows 11 환경에서 Docker와 WSL2를 활용하여 DevOps 개발 환경을 �
 | WSL2 | - | Linux 환경 |
 
 ## 📁 프로젝트 구조
+\\\
 devops-practice/
 ├── docker/
-├── Dockerfile
-├── app/
-│   └── index.html
+│   ├── Dockerfile
+│   └── app/
+│       └── index.html
+├── docs/
+├── scripts/
 ├── screenshots/
 └── README.md
+\\\
 
 ## 🎓 학습 내용
 
