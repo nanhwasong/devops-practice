@@ -26,7 +26,7 @@ Windows 11 환경에서 Docker와 WSL2를 활용하여 DevOps 개발 환경을 �
 
 ### 1단계: Docker 설치 및 버전 확인
 **명령어:**
-\\\ash
+
 docker --version
 docker info
 \\\
@@ -34,7 +34,7 @@ docker info
 
 ### 2단계: 기본 명령어 학습
 **명령어:**
-\\\ash
+
 docker ps -a
 docker images
 docker ps
@@ -52,7 +52,7 @@ EXPOSE 80
 
 ### 4단계: 이미지 빌드
 **명령어:**
-\\\ash
+
 docker build -t devops-web .
 docker images
 \\\
@@ -60,7 +60,7 @@ docker images
 
 ### 5단계: 컨테이너 실행
 **명령어:**
-\\\ash
+
 docker run -p 8080:80 --name my-nginx devops-web
 \\\
 **결과:** ✅ 포트 8080에서 실행 중
@@ -71,7 +71,7 @@ docker run -p 8080:80 --name my-nginx devops-web
 
 ### 7단계: 로그 확인
 **명령어:**
-\\\ash
+
 docker logs my-nginx
 docker logs -f my-nginx
 \\\
@@ -79,7 +79,7 @@ docker logs -f my-nginx
 
 ### 8단계: 파일 권한 설정
 **명령어:**
-\\\ash
+
 ls -la docker/app/index.html
 chmod 644 docker/app/index.html
 \\\
@@ -87,14 +87,14 @@ chmod 644 docker/app/index.html
 
 ### 9단계: 바인드 마운트
 **명령어:**
-\\\ash
+
 docker run -p 8080:80 -v C:\Users\somed\Documents\devops-practice\docker\app:/usr/share/nginx/html --name my-nginx devops-web
 \\\
 **결과:** ✅ 브라우저에서 http://localhost:8080 접속 성공
 
 ### 10단계: Docker 볼륨
 **명령어:**
-\\\ash
+
 docker volume create my-volume
 docker run -p 8080:80 -v my-volume:/usr/share/nginx/html --name my-nginx-volume devops-web
 \\\
@@ -102,21 +102,21 @@ docker run -p 8080:80 -v my-volume:/usr/share/nginx/html --name my-nginx-volume 
 
 ### 11단계: 볼륨 영속성 검증
 **명령어:**
-\\\ash
+
 docker cp docker/app/index.html my-nginx-volume:/usr/share/nginx/html/
 \\\
 **결과:** ✅ 파일 복사 성공, 데이터 영속성 확인
 
 ### 12단계: 이미지 정리
 **명령어:**
-\\\ash
+
 docker rmi <image-id>
 \\\
 **결과:** ✅ 불필요한 이미지 제거
 
 ### 13단계: Git 커밋 및 GitHub 업로드
 **명령어:**
-\\\ash
+
 git add .
 git commit -m "Add DevOps practice project"
 git push origin main
@@ -133,7 +133,7 @@ Error response from daemon: Bind for 0.0.0.0:8080 failed: port is already alloca
 **원인:** 포트 8080이 이미 사용 중
 
 **해결 방법:**
-\\\ash
+
 docker ps -a
 docker rm <container-name>
 docker run -p 8081:80 devops-web
@@ -155,7 +155,7 @@ docker run -p 8081:80 devops-web
 **문제:** Docker 컨테이너에서 호스트 파일에 접근 불가
 
 **해결 방법:**
-\\\ash
+
 chmod 644 docker/app/index.html
 \\\
 **결과:** ✅ 파일 접근 권한 확보
